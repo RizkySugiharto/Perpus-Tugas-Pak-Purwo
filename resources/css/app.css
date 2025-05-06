@@ -1,0 +1,26 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@font-face {
+    font-family: 'Funtastic';
+    src: url('../fonts/Funtastic.otf');
+}
+
+@font-face {
+    font-family: 'Comic Sans';
+    src: url('../fonts/Comic-Sans.ttf');
+}
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-funtastic: 'Funtastic', ui-sans-serif, sans-serif;
+    --font-comic-sans: 'Comic Sans', ui-sans-serif, sans-serif;
+    --color-primary: #653dab;
+    --color-secondary: #670073;
+    --gradient-body: linear-gradient(to bottom, black, #653dab)
+}
