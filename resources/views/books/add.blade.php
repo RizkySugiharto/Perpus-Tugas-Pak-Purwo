@@ -4,19 +4,31 @@
         <div class="flex flex-row justify-between items-center">
             <h2 class="font-funtastic text-[21px] text-white">Tambah Buku</h2>
         </div>
-        <form action="{{ route('books.store') }}" method="post" class="p-4 bg-secondary rounded-lg mt-6 shadow-primary shadow-[0_0_16px_4px] space-y-2">
+        <form action="{{ route('books.store') }}" method="post" enctype="multipart/form-data" class="p-4 bg-secondary rounded-lg mt-6 shadow-primary shadow-[0_0_16px_4px] space-y-2">
             @csrf
             <div class="space-y-1 flex flex-col">
+                <label for="cover_file" class="text-white">Foto Cover Buku</label>
+                <input type="file" accept="image/*" name="cover_file" id="cover_file" class="caret-black text-black bg-white rounded-sm text-[20px] p-1 px-3" required>
+            </div>
+            <div class="space-y-1 flex flex-col">
                 <label for="title" class="text-white">Judul</label>
-                <input type="text" name="title" id="title" class="caret-black text-black bg-white rounded-sm text-[20px] p-1 px-3">
+                <input type="text" name="title" id="title" class="caret-black text-black bg-white rounded-sm text-[20px] p-1 px-3" required>
             </div>
             <div class="space-y-1 flex flex-col">
                 <label for="author" class="text-white">Pengarang</label>
-                <input type="text" name="author" id="author" class="caret-black text-black bg-white rounded-sm text-[20px] p-1 px-3">
+                <input type="text" name="author" id="author" class="caret-black text-black bg-white rounded-sm text-[20px] p-1 px-3" required>
             </div>
             <div class="space-y-1 flex flex-col">
                 <label for="publisher" class="text-white">Penerbit</label>
-                <input type="text" name="publisher" id="publisher" class="caret-black text-black bg-white rounded-sm text-[20px] p-1 px-3">
+                <input type="text" name="publisher" id="publisher" class="caret-black text-black bg-white rounded-sm text-[20px] p-1 px-3" required>
+            </div>
+            <div class="space-y-1 flex flex-col">
+                <label for="published_date" class="text-white">Tanggal Terbit</label>
+                <input type="date" name="published_date" id="published_date" class="caret-black text-black bg-white rounded-sm text-[20px] p-1 px-3" required>
+            </div>
+            <div class="space-y-1 flex flex-col">
+                <label for="description" class="text-white">Deskripsi Buku</label>
+                <textarea name="description" id="description" rows="10" class="caret-black text-black bg-white rounded-sm text-[20px] p-1 px-3 resize-none" required></textarea>
             </div>
             <div class="space-x-4 flex flex-row mt-2">
                 <button class="bg-green-600 rounded-md mt-7 text-white px-6 py-3 font-funtastic tracking-wider text-[18px] hover:shadow-green-300 hover:shadow-[0_0_7px_3px]">Tambah</button>
