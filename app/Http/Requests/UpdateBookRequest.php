@@ -23,7 +23,7 @@ class UpdateBookRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'cover_file' => 'file|max:10240',
+            'cover_file' => 'nullable|image|max:10240|',
             'title' => 'required|string|max:255',
             'author' => 'required|string|max:200',
             'publisher' => 'required|string|max:200',

@@ -15,7 +15,7 @@
                 </select>
             </div>
             <div class="flex flex-col gap-y-2">
-                <label for="filter-by-date">Filyer By Date</label>
+                <label for="filter-by-date">Filter By Date</label>
                 <input type="text" name="filter-by-date" id="filter-by-date" value="{{ isset($_GET['filter-by-date']) ? $_GET['filter-by-date'] : '' }}" class="border-2 broder-white px-3 py-1 rounded-md">
             </div>
         </form>

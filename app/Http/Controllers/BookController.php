@@ -113,7 +113,7 @@ class BookController extends Controller
         ]);
 
         if ($updated) {
-            return redirect()->route('books.index');
+            return redirect()->route('books.show', ['book' => $book]);
         } else {
             return redirect()->route('books.edit', ['book' => $book]);
         }
