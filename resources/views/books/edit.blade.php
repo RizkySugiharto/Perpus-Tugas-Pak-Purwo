@@ -12,7 +12,7 @@
                     <p class="m-0 mb-1">Foto Cover Buku</p>
                     <img id="preview-cover_file" src="{{ $book->getCoverUrl() }}" alt="" class="w-[20rem] h-[28rem] object-cover rounded-lg hover:cursor-pointer" title="Select an image">
                 </label>
-                <input type="file" accept="image/*" name="cover_file" id="cover_file" class="caret-black text-black bg-white rounded-sm text-[20px] p-1 px-3 w-full" style="display: none" required>
+                <input type="file" accept="image/*" name="cover_file" id="cover_file" class="caret-black text-black bg-white rounded-sm text-[20px] p-1 px-3 w-full" style="display: none">
             </div>
             <div class="space-y-1 flex flex-col">
                 <label for="title" class="text-white">Judul</label>

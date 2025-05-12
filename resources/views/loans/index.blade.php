@@ -10,7 +10,6 @@
                 <tr>
                     <th class="py-3 px-6 border-white border-2 bg-gray-800">ID</th></th>
                     <th class="py-3 px-6 border-white border-2 bg-gray-800">Nama Siswa</th></th>
-                    <th class="py-3 px-6 border-white border-2 bg-gray-800">Kelas Siswa</th></th>
                     <th class="py-3 px-6 border-white border-2 bg-gray-800">Nama Petugas</th></th>
                     <th class="py-3 px-6 border-white border-2 bg-gray-800">Judul Buku</th></th>
                     <th class="py-3 px-6 border-white border-2 bg-gray-800">Aksi</th></th>
@@ -21,8 +20,7 @@
                     <tr>
                         <td class="py-3 px-6 border-white border-2">{{ $loan->id }}</td>
                         <td class="py-3 px-6 border-white border-2">{{ $loan->student_name }}</td>
-                        <td class="py-3 px-6 border-white border-2">{{ $loan->student_class }}</td>
-                        <td class="py-3 px-6 border-white border-2">{{ $loan->user_name }}</td>
+                        <td class="py-3 px-6 border-white border-2">{{ $loan->employee_name }}</td>
                         <td class="py-3 px-6 border-white border-2">{{ $loan->book_title }}</td>
                         <td class="py-3 px-6 border-white border-2 flex flex-wrap gap-2">
                             <form action="{{ route('loans.destroy', $loan) }}" method="post">

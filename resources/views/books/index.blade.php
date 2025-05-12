@@ -23,9 +23,9 @@
             @foreach ($books as $book)
                 <a href="{{ route('books.show', $book) }}" class="decoration-0">
                     <div class="bg-black border-3 border-primary rounded-lg w-[17rem] overflow-clip hover:border-white hover:shadow-[0px_0px_8px_3px_white]">
-                        <img src="{{ $book->getCoverUrl() }}" alt="Cover" class="h-[16rem] w-full object-cover">
-                        <p class="pt-2 pb-1 px-4 text-white text-[20px]">{{ $book->title }}</p>
-                        <p class="pt-2 px-4 text-gray-500 text-[16px]">By: {{ $book->author }}</p>
+                        <img src="{{ $book->getCoverUrl() }}" alt="Cover" class="h-[18rem] w-full object-cover">
+                        <p class="pt-2 px-4 text-white text-[20px] truncate">{{ $book->title }}</p>
+                        <p class="pt-1 pb-2 px-4 text-gray-500 text-[16px] truncate">By: {{ $book->author }}</p>
                         <p class="py-2 px-4 text-gray-500 text-[12px] text-end">{{ $book->published_date->format('d/m/Y') }}</p>
                     </div>
                 </a>

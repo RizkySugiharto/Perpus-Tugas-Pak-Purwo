@@ -14,12 +14,11 @@ return new class extends Migration
         Schema::create('loans', function (Blueprint $table) {
             $table->id();
             $table->foreignId('book_id')->nullable()->constrained()->nullOnUpdate()->nullOnDelete();
-            $table->foreignId('user_id')->nullable()->constrained()->nullOnUpdate()->nullOnDelete();
-            $table->foreignId('student_id')->nullable()->constrained()->nullOnUpdate()->nullOnDelete();
+            $table->foreignId('employee_id')->nullable()->constrained('users', 'id')->nullOnUpdate()->nullOnDelete();
+            $table->foreignId('student_id')->nullable()->constrained('users', 'id')->nullOnUpdate()->nullOnDelete();
             $table->string('book_title', 255);
-            $table->string('user_name');
+            $table->string('employee_name');
             $table->string('student_name');
-            $table->string('student_class', 20);
             $table->softDeletes();
         });
     }

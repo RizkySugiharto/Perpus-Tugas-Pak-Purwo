@@ -18,7 +18,7 @@
                 <label for="student_id" class="text-white">Pilih Siswa</label>
                 <select name="student_id" id="student_id" class="caret-black text-black bg-white rounded-sm text-[20px] py-2 px-3">
                     @foreach ($students as $student)
-                        <option value="{{ $student->id }}">{{ $student->name }} | {{ $student->class }}</option>
+                        <option value="{{ $student->id }}">{{ $student->name }}</option>
                     @endforeach
                 </select>
             </div>

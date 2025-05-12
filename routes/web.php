@@ -19,7 +19,7 @@ Route::get('/dashboard', function () {
     return view('dashboard', [
         'user' => Auth::user(),
         'countBooks' => Book::all()->count(),
-        'countStudents' => Student::all()->count(),
+        'countStudents' => User::all()->count(),
         'countUsers' => User::all()->count(),
         'countLoans' => Loan::all()->count(),
     ]);
@@ -32,12 +32,11 @@ Route::prefix('auth')->controller( AuthController::class)->group(function () {
 });
 
 Route::resource('books', BookController::class)->middleware('auth');
-Route::resource('students', StudentController::class)->middleware('auth');
 Route::resource('users', UserController::class)->middleware('auth');
 Route::prefix('loans')->name('loans.')->controller( LoanController::class)->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('/create', 'create')->name('create');
     Route::post('/store', 'store')->name('store');
     Route::put('/restore', 'restore')->name('restore');
-    Route::delete('/destroy', 'destroy')->name('destroy');
+    Route::delete('/destroy/{loan}', 'destroy')->name('destroy');
 })->middleware('auth');

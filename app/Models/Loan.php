@@ -11,12 +11,11 @@ class Loan extends Model
 
     protected $fillable = [
         'book_id',
-        'user_id',
+        'employee_id',
         'student_id',
         'book_title',
-        'user_name',
+        'employee_name',
         'student_name',
-        'student_class',
     ];
 
     public $timestamps = false;

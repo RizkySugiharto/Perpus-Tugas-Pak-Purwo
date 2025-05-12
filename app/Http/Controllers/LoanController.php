@@ -6,6 +6,7 @@ use App\Models\Book;
 use App\Models\Loan;
 use App\Http\Requests\StoreLoanRequest;
 use App\Models\Student;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class LoanController extends Controller
@@ -25,7 +26,7 @@ class LoanController extends Controller
     public function create()
     {
         $books = Book::all();
-        $students = Student::all();
+        $students = User::all();
         return view('loans.add', [
             'books' => $books,
             'students' => $students,
@@ -39,15 +40,14 @@ class LoanController extends Controller
     {
         $book = Book::find($request->validated('book_id'));
         $user = Auth::user();
-        $student = Student::find($request->validated('student_id'));
+        $student = User::find($request->validated('student_id'));
         $data = [
             'book_id' => $book->id,
-            'user_id' => $user->id,
+            'employee_id' => $user->id,
             'student_id' => $student->id,
             'book_title' => $book->title,
-            'user_name' => $user->name,
+            'employee_name' => $user->name,
             'student_name' => $student->name,
-            'student_class' => $student->class,
         ];
 
         $loan = new Loan($data);
